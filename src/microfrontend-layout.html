@@ -1,4 +1,4 @@
-<single-spa-router>
+<single-spa-router mode="hash">
   <!--
 
     This is the single-spa Layout Definition for your microfrontends.
@@ -18,8 +18,19 @@
   -->
 
   <main>
-    <route default>
-      <application name="@single-spa/welcome"></application>
-    </route>
+    <application name="@test-mf/navbar"></application>
+    <div style="margin-top: 90px;">
+      <route default>
+        default page for all users
+      </route>
+
+      <route path="dashboard">
+        <application name="@test-mf/dashboard"></application>
+      </route>
+
+      <route path="signIn">
+        <application name="@test-mf/sign-in"></application>
+      </route>
+    </div>
   </main>
 </single-spa-router>
